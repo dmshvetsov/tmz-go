@@ -10,7 +10,6 @@ var Tformat = time.Kitchen
 var SecInHour = 3600
 
 func toutput(time time.Time) {
-  fmt.Printf("Your time is: %v\n", time.Format(Tformat))
 }
 
 func doutput(ltime, rtime time.Time) {
@@ -33,7 +32,10 @@ func main() {
     os.Exit(1)
   }
 
-  toutput(utime)
-  toutput(utime.In(othertimezone))
+  fmt.Printf(
+    "%s time is: %v\n",
+    userInput,
+    utime.In(othertimezone).Format(Tformat),
+  )
   doutput(utime, utime.In(othertimezone))
 }
