@@ -26,7 +26,8 @@ func doutput(ltime, rtime time.Time) {
 func main() {
   utime := time.Now()
 
-  othertimezone, err := time.LoadLocation("Europe/London")
+  userInput := os.Args[1]
+  othertimezone, err := time.LoadLocation(userInput)
   if err != nil {
     fmt.Println(err)
     os.Exit(1)
