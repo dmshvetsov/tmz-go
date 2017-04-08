@@ -9,9 +9,6 @@ import (
 var Tformat = time.Kitchen
 var SecInHour = 3600
 
-func toutput(time time.Time) {
-}
-
 func doutput(ltime, rtime time.Time) {
   _, loffset := ltime.Zone()
   _, roffset := rtime.Zone()
